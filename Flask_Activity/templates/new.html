@@ -1,0 +1,24 @@
+<html>
+<body>
+<form action ='{{url_for("newStartup")}}' method ='POST'>
+  <p> Create Startup! </p>
+    <div>
+  <input type='text', name='name', size='30', placeholder={{name}}>
+  <input type='submit' value='create startup!'>
+    </div>
+
+    {% with message= get_flashed_messages()%}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+    <li>
+      <strong>{{message}}</strong>
+      {% endfor %}
+      </li>
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+</form>
+  </body>
+</html>

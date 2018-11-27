@@ -1,0 +1,16 @@
+<html>
+<body>
+
+  <form action='{{url_for("editstarter", startup_id= startup.id)}}' method='POST'>
+
+    <div>
+  <input type= 'text', name='name', size='30' placeholder={{startup.name}}>
+  <input type= 'submit', value='Edit'>
+    </div>
+  <a href= '{{url_for("index")}}'>Cancel</a>
+
+  </form>
+
+
+</body>
+</html>

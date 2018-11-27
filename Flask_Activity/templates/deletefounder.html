@@ -1,0 +1,31 @@
+<html>
+<body>
+
+  <form action='{{url_for("deleteFounder", startup_id= startup_id, founder_id=founder.id)}}' method='POST'>
+
+<h1>Are you sure you want to delete {{founder.name}}</h1>
+
+{% with message= get_flashed_messages()%}
+{% if messages %}
+<ul>
+{% for message in messages %}
+<li>
+  <strong>{{message}}</strong>
+
+  {% endfor %}
+  </li>
+</ul>
+{% endif %}
+{% endwith %}
+<div>
+  <h3>{{founder.name}}<h3>
+<input type='submit' value='Delete'>
+</div>
+
+<a href = '{{ url_for("startup", startup_id=founder.startup_id)}}'> Cancel </a>
+
+  </form>
+
+
+</body>
+</html>

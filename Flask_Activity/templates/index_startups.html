@@ -1,0 +1,30 @@
+<html>
+<body>
+  <body>
+    <a href = '{{url_for("newStartup")}}'> Create Startup! </a>
+
+  </br></br>
+
+{% for startup in startups %}
+ <div>
+   <a href= '{{url_for("startup",startup_id=startup.id)}}'> {{startup.name}} </a></br>
+   <a href = '{{url_for("editstarter", startup_id= startup.id )}}'>Edit </a>
+   <a href = '{{url_for("deleteStartup",startup_id= startup.id)}}'>Delete</a>" </br></br>
+
+{%endfor%}
+ </div>
+
+ {% with message= get_flashed_messages()%}
+ {% if messages %}
+ <ul>
+ {% for message in messages %}
+ <li>
+   <strong>{{message}}</strong>
+   {% endfor %}
+   </li>
+ </ul>
+ {% endif %}
+ {% endwith %}
+ 
+  </body>
+</html>
